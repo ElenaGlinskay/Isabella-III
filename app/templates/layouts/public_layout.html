@@ -1,0 +1,12 @@
+<!-- templates/layouts/public_layout.html -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Página Pública</title>
+  </head>
+  <body>
+    {% include 'components/common/header.html' %}
+    <main>{% block main_content %}{% endblock %}</main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+#test Post Get Update Delete 
+
+curl -X POST http://127.0.0.1:5000/documents \
+-H "Content-Type: application/json" \
+-d '{
+  "titulo": "Nuevo Documento",
+  "tipo": "Informe",
+  "fecha_creacion": "2024-09-28",
+  "estado": "Activo",
+  "fecha_recepcion": "2024-09-29",
+  "origen": "Interno"
+}'

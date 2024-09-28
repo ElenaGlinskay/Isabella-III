@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de configuración
+*.env
+
+# Archivos de logs
+*.log
+
+# Archivos de compilación
+*.egg-info/
+dist/
+build/
