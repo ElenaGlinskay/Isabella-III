@@ -2,7 +2,7 @@
   <h1>Bienvenido, {{ user }}!</h1>
   <nav>
     <ul>
-      {% for item in menu %} {% if not item.submenus %}
+      {% for item in menu %}
       <li>
         <a href="{{ item.ruta }}">{{ item.nombre }}</a>
         {% if item.submenus %}
