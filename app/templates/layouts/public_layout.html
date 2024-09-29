@@ -1,12 +1,30 @@
-<!-- templates/layouts/public_layout.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Página Pública</title>
+    <title>Página de Inicio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
     {% include 'components/common/header.html' %}
-    <main>{% block main_content %}{% endblock %}</main>
-  </body>
+    
+    <main>
+        <!-- Bloque para contenido principal -->
+        {% block content %}
+        <!-- Contenido específico de cada página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2024 Mi Aplicación. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts generales -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    {% block scripts %}
+    <!-- Scripts específicos de cada página -->
+    {% endblock %}
 </html>

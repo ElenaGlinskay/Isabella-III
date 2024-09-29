@@ -1,12 +1,21 @@
-<!-- templates/layouts/private_layout.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Página Privada</title>
+    <title>Página de Inicio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
     {% include 'components/common/header.html' %}
-    <main>{% block main_content %}{% endblock %}</main>
+    <div class="content">
+      <h1>Bienvenido</h1>
+sdasdasdasd
+      <p>Hola,</p>
+
+      <p>Por favor, inicie sesión para acceder a más funciones.</p>
+    </div>
   </body>
 </html>

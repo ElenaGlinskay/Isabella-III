@@ -21,11 +21,7 @@ def load_user(user_id):
     # Cargar el usuario de la base de datos
     return mongo.db.users.find_one({"_id": user_id})  # Asegúrate de usar el método adecuado
 
-# Importar y registrar blueprints
-from app.routes import document_routes, section_routes, auth  # Cambia la orden de importación
-app.register_blueprint(auth.auth_bp)  # Registra el Blueprint de autenticación
-app.register_blueprint(document_routes.document_bp)
-app.register_blueprint(section_routes.section_bp)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
