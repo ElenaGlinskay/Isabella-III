@@ -1,19 +1,21 @@
 <header>
-  <h1>Bienvenido, {{ user }}!</h1>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <!-- <h1>Bienvenido, {{ current_user.username if current_user.is_authenticated else 'Visitante' }}!</h1> -->
+    <h1>Bienvenido!</h1>
   <nav>
-    <ul>
-      {% for item in menu %}
-      <li>
-        <a href="{{ item.ruta }}">{{ item.nombre }}</a>
-        {% if item.submenus %}
-        <ul>
-          {% for sub in item.submenus %}
-          <li><a href="{{ sub.ruta }}">{{ sub.nombre }}</a></li>
+      <ul>
+          {% for item in menu %}
+              <li>
+                  <a href="{{ item.ruta }}">{{ item.nombre }}</a>
+                  {% if item.submenus %}
+                      <ul>
+                          {% for sub in item.submenus %}
+                              <li><a href="{{ sub.ruta }}">{{ sub.nombre }}</a></li>
+                          {% endfor %}
+                      </ul>
+                  {% endif %}
+              </li>
           {% endfor %}
-        </ul>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+      </ul>
   </nav>
 </header>

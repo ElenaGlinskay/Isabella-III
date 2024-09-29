@@ -1,12 +1,52 @@
-<!-- templates/layouts/public_layout.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Página Pública</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Página Principal</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Agrega otros estilos o scripts según sea necesario -->
   </head>
   <body>
-    {% include 'components/common/header.html' %}
-    <main>{% block main_content %}{% endblock %}</main>
+    <header>
+      <h1>
+        Bienvenido, {{ current_user.username if current_user.is_authenticated
+        else 'Visitante' }}!
+      </h1>
+      <nav>
+        <ul>
+          {% for item in menu %}
+          <li>
+            <a href="{{ item.ruta }}">{{ item.nombre }}</a>
+            {% if item.submenus %}
+            <ul>
+              {% for sub in item.submenus %}
+              <li><a href="{{ sub.ruta }}">{{ sub.nombre }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Contenido Principal</h2>
+      <p>
+        ¡Bienvenido a nuestra aplicación! Aquí puedes encontrar información
+        sobre nuestros servicios y más.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Mi Aplicación. Todos</p>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,6 @@
+<footer>
+    <p>&copy; 2024 {{ footer_text if footer_text else "Mi Aplicación" }}. Todos los derechos reservados.</p>
+    {% if footer_icon %}
+        <img src="{{ footer_icon }}" alt="Icono del Footer" class="footer-icon">
+    {% endif %}
+</footer>

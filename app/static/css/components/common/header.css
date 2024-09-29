@@ -1,0 +1,20 @@
+header {
+    background-color: #4CAF50; /* Color de fondo específico del header */
+    color: white; /* Color del texto específico */
+}
+
+header h1 {
+    font-size: 28px; /* Tamaño de fuente específico del header */
+}
+
+header nav ul li {
+    margin-right: 20px; /* Espaciado entre enlaces específico */
+}
+
+header nav ul li a {
+    color: #FFD700; /* Color de los enlaces específico */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
